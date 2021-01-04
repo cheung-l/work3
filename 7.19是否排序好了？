@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class BooleanIsSorted {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner (System.in);
+		System.out.print("Enter the size of the list : ");
+		int n = input.nextInt();
+		System.out.print("Enter the contents of the list : ");
+		int [] num = new int [100];
+		for( int i = 0 ; i < n ; i++) {
+			num[i] = input.nextInt();
+		}
+		int ret = 1;
+		for( int i = 0 ; i < n ; i++) {
+			for( int j = i + 1 ; j < n ; j++ ) {
+				if( num[j] < num[i]) {
+					ret = 0;
+					break;
+				}
+			}
+		}
+		System.out.print("The list has " + n + " integers ");
+		for (int i = 0 ; i < n ; i ++) {
+			System.out.print(num[i] + " ");
+		}
+		if(ret==1)
+			System.out.println( "\nThe list is already sorted");
+		else System.out.println( "\nThe list is not sorted");
+	}
+
+}
