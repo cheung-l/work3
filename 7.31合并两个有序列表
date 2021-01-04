@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class List {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter list1 size and comtents: ");
+		int length1 = input.nextInt();
+		int[] list1 = new int[length1];
+		for( int i = 0 ; i < length1 ; i++ ) {
+			list1[i] = input.nextInt();
+		}
+		System.out.print("Enter list2 size and comtents: ");
+		int length2 = input.nextInt();
+		int[] list2 = new int[length2];
+		for( int i = 0 ; i < length2 ; i++ ) {
+			list2[i] = input.nextInt();
+		}
+		System.out.print("list1 is ");
+		for( int i = 0 ; i < length1 ; i++ ) {
+			System.out.print(list1[i] + " ");
+		}
+		System.out.print("list2 is ");
+		for( int i = 0 ; i < length2 ; i++ ) {
+			System.out.print(list2[i] + " ");
+		}
+		System.out.print("The merged list is ");
+		int i =0,j=0;
+		while(i<length1 && j<length2) {
+			if(list1[i]>list2[j]) {
+				System.out.print(list2[j] + " ");
+				j++;
+			}
+			else {
+				System.out.print(list1[i] + " ");
+				i++;
+			}
+		}
+		for( ; i< length1 ; i++) {
+			System.out.print(list1[i] + " ");
+		}
+		for( ; j<length2;j++) {
+			System.out.print(list2[j] + " ");
+		}
+	}
+
+}
