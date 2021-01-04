@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class StringSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("请输入字符串：");
+		Scanner input = new Scanner(System.in);
+		String s = input.nextLine();
+		String hasBeenSorted = sort(s);
+		System.out.println("排序好的字符串为： " + hasBeenSorted);
+		
+		
+	}
+	public static String sort(String s) {
+		char[] chs = s.toCharArray();
+		java.util.Arrays.sort(chs);
+		return String.valueOf(chs);
+		
+	}
+
+}
