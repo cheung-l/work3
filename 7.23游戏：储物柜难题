@@ -1,0 +1,26 @@
+public class ProblemOfLockers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		boolean [] Locker = new boolean [101];
+		int i,j;
+		for( i = 0 ; i < 101 ; i ++ ) {
+			Locker[i] = true;
+		}
+		for( i = 2 ; i < 101 ; i +=2) {
+			Locker[i] = false;
+		}
+		System.out.print("打开的储物柜有： 1 ");
+		for( i =3 ; i < 101 ; i ++ ) {
+			for( j = i ; j < 101 ; j += i ) {
+				if( Locker[j] == true)
+					Locker[j] = false;
+				else Locker[j] = true;
+			}
+			if(Locker[i] == true) 
+				System.out.print(i + " ");
+		}
+	}
+
+}
