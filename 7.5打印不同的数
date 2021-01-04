@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class PrintNumbers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter 10 numbers :");
+		int [] num = new int [10];
+		int [] times = new int [10];
+		for( int i = 0 ; i < 10 ; i++ ) {
+			num[i] = input.nextInt();
+			times[i] = 1;
+		}
+		int sum = 10;
+		for( int i =0 ; i < 10 ; i++ ) {
+			for( int j = i+1 ;j < 10 ; j++ ) {
+				if( num[i] == num [j] && times[i] == 1) {
+					times[j] = 0;
+					sum--;
+				}
+			}
+			
+		}
+		System.out.println("The number of distinct numbers is " + sum);
+		System.out.print("The distinct numbers are: ");
+		for( int i = 0 ; i < 10 ; i++) {
+			if( times[i] == 1 ) {
+				System.out.print(num[i] + " ");
+			}
+		}
+	}
